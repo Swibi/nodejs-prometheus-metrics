@@ -1,6 +1,8 @@
 import { collectDefaultMetrics, Registry } from 'prom-client'
+import dotenv from 'dotenv'
 
 export function addMetrics (app: any): void {
+  dotenv.config()
   const registry = new Registry()
 
   if (process.env.APP_NAME != null) {
