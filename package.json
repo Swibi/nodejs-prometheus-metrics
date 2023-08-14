@@ -1,0 +1,49 @@
+{
+  "name": "@swibi/nodejs-prometheus-metrics",
+  "version": "0.0.1",
+  "description": "A simple package that allows the addition of a metrics endpoint that exposes prometheus metrics",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "test": "echo \"No test specified yet\"",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:types",
+    "build:cjs": "tsc -p config/tsconfig.cjs.json",
+    "build:esm": "tsc -p config/tsconfig.esm.json",
+    "build:types": "tsc -p config/tsconfig.types.json",
+    "package": "npm run build && npm pack"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Swibi/nodejs-prometheus-metrics.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "keywords": [
+    "package",
+    "submodule",
+    "client"
+  ],
+  "author": "Anders Bea",
+  "bugs": {
+    "url": "https://github.com/Swibi/nodejs-prometheus-metrics/issues"
+  },
+  "homepage": "https://github.com/Swibi/nodejs-prometheus-metrics#readme",
+  "dependencies": {
+    "prom-client": "^14.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.29.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^9.4.2"
+  }
+}
